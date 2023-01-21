@@ -1,0 +1,40 @@
+//
+//
+{
+    "configurations": [
+        {
+            "name": "TJB",
+            "includePath": [
+                "${workspaceFolder}/main/**",
+                "${workspaceFolder}/components/**",
+                "${IDF_PATH}/components/**",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceFolder}/main",
+                    "${workspaceFolder}/components",
+                    "${IDF_PATH}/components",
+                    ""
+                ]
+            },
+            "defines": [
+                "_GNU_SOURCE",
+                "IDF_VER=\"4.4.1\"",
+                "ESP_PLATFORM",
+                "_POSIX_READER_WRITER_LOCKS",
+                "ARDUINO_ESP32_DEV",
+                ""
+            ],
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "compilerPath": "${IDF_TOOLS_PATH}/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe",
+            "compilerArgs": [
+                "-mlongcalls",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

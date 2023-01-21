@@ -1,0 +1,31 @@
+// AUTOMATICALLY GENERATED FILE. PLEASE DO NOT MODIFY IT MANUALLY
+//
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "preLaunchTask":  "preRun",
+            "name": "ESP32 OpenOCD",
+            "type": "espidf",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/build",
+            "program": "${workspaceFolder}/build/ESP32_Car01.elf",
+            "miDebuggerPath": "F:/Development/Tools/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe",
+            "setupCommands": [
+                {
+                    "text": "target remote 127.0.0.1:3333"
+                },
+                {
+                    "text": "set remote hardware-watchpoint-limit 2"
+                },
+                {
+                    "text": "monitor reset halt"
+                },
+                {
+                    "text": "flushregs"
+                }
+            ]
+        }
+    ]
+}
