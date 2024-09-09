@@ -4,15 +4,5 @@
 			"path": "."
 		}
     ],
-    "settings": {
-        "files.associations": {
-            "*.ipp": "cpp",
-            "*.inc": "cpp",
-            "cstddef": "cpp",
-            "array": "cpp",
-            "string": "cpp",
-            "string_view": "cpp",
-            "*.tcc": "cpp"
-        }
-    }
+    "settings": {}
 }
