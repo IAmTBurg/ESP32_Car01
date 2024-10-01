@@ -12,10 +12,9 @@
 
 #include <cstring>
 #include <stdio.h>
-#include "driver/i2c.h"
-#include "esp_err.h"
+#include "driver/gpio.h"
+#include "esp_event.h"
 #include "esp_log.h"
-
 // ------------------------ generic defines   ---------------------------------------------------------------------
 
 // ------------------------ PCA9685 defines   ---------------------------------------------------------------------

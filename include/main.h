@@ -8,19 +8,18 @@
 //
 // =====================================================================================
 
-#define LOG_LEVEL_LOCAL ESP_LOG_VERBOSE
-#include "esp_log.h"
-
+#include <esp_log.h>
 #include <cstring>
 #include <stdio.h>
 #include <string>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include "tasks.h"
 #include "sbus_component.h"
 #include "motor_control.h"
 #include "my_i2c_interface.h"
 #include "pca9685.h"
+
+#define LOG_LEVEL_LOCAL ESP_LOG_VERBOSE
 
 #define MICRO_SECS (esp_timer_get_time())
 #define MILLI_SECS (esp_timer_get_time() / 1000)

@@ -24,9 +24,6 @@
 #include <cstring>
 #include <stdio.h>
 #include "driver/gpio.h"
-#include "driver/ledc.h"
-#include "driver/i2c.h"
-#include "esp_err.h"
 #include "esp_event.h"
 #include "esp_log.h"
 #include "motor_control_task.h"

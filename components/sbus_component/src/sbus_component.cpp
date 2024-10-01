@@ -1,13 +1,10 @@
-
 #include <stdio.h>
 #include <string>
-
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "freertos/projdefs.h"
-#include "freertos/queue.h"
-#include "driver/uart.h"
-// #include "main.h"
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include <freertos/projdefs.h>
+#include <freertos/queue.h>
+#include <driver/uart.h>
 #include "sbus_component.h"
 
 #define MICRO_SECS (esp_timer_get_time())

@@ -1,18 +1,12 @@
-set(COMPONENT_ADD_INCLUDEDIRS
-            "../../main"    
-            "../../main/include"    
-            "../../components/motor_control/include"
-            "../../components/motor_control"
-            "../../components/sbus_component/include"
-            "../../components/sbus_component"
-            "../../components/pca9685/include"
-            "../../components/pca9685"
-            "../../components/my_i2c_interface/include"
-            "../../components/my_i2c_interface"
-    )
+# ./components/pca9685/CMakeLists.txt
 
-set(COMPONENT_SRCS 
-    pca9685.cpp
-    )
-
-register_component()
+idf_component_register(
+    SRCS 
+        "pca9685.cpp"
+    INCLUDE_DIRS 
+        "include"
+    REQUIRES 
+        driver
+        esp_event
+        # esp_log
+)

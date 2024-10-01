@@ -1,0 +1,2 @@
+# Disable OpenThread
+CONFIG_OPENTHREAD=n
