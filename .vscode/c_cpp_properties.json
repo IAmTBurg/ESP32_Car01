@@ -8,12 +8,11 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "F:/Development/Projects/ESP32_Car03/include",
                 "F:/Development/Projects/ESP32_Car03/src",
-                "F:/Development/Projects/ESP32_Car03/components/motor_control/include",
-                "F:/Development/Projects/ESP32_Car03/components/my_i2c_interface/include",
-                "F:/Development/Projects/ESP32_Car03/components/pca9685/include",
-                "F:/Development/Projects/ESP32_Car03/components/sbus_component/include",
+                "F:/Development/Projects/ESP32_Car03/lib/sbus_component",
+                "F:/Development/Projects/ESP32_Car03/lib/pca9685",
+                "F:/Development/Projects/ESP32_Car03/lib/my_i2c_interface",
+                "F:/Development/Projects/ESP32_Car03/lib/motor_control",
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/esp32/include",
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/include",
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/deprecated_include",
@@ -168,17 +167,17 @@
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/perfmon/include",
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/spiffs/include",
                 "C:/Users/Tom/.platformio/packages/framework-espidf/components/wifi_provisioning/include",
-
+                "F:/Development/Projects/ESP32_Car03/include",
+                ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "F:/Development/Projects/ESP32_Car03/include",
                     "F:/Development/Projects/ESP32_Car03/src",
-                    "F:/Development/Projects/ESP32_Car03/components/motor_control/include",
-                    "F:/Development/Projects/ESP32_Car03/components/my_i2c_interface/include",
-                    "F:/Development/Projects/ESP32_Car03/components/pca9685/include",
-                    "F:/Development/Projects/ESP32_Car03/components/sbus_component/include",
+                    "F:/Development/Projects/ESP32_Car03/lib/sbus_component",
+                    "F:/Development/Projects/ESP32_Car03/lib/pca9685",
+                    "F:/Development/Projects/ESP32_Car03/lib/my_i2c_interface",
+                    "F:/Development/Projects/ESP32_Car03/lib/motor_control",
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/esp32/include",
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/include",
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/xtensa/deprecated_include",
@@ -333,10 +332,7 @@
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/perfmon/include",
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/spiffs/include",
                     "C:/Users/Tom/.platformio/packages/framework-espidf/components/wifi_provisioning/include",
-                    "F:/Development/Projects/ESP32_Car03/components/motor_control/include",
-                    "F:/Development/Projects/ESP32_Car03/components/my_i2c_interface/include",
-                    "F:/Development/Projects/ESP32_Car03/components/pca9685/include",
-                    "F:/Development/Projects/ESP32_Car03/components/sbus_component/include",
+                    "F:/Development/Projects/ESP32_Car03/include",
                     ""
                 ]
             },

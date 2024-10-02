@@ -15,11 +15,11 @@
 // 
 //=====================================================================================
 
-#include "pca9685.h"
 #include <driver/gpio.h>
 #include "driver/gpio.h"
 #include "esp_event.h"
 #include "esp_log.h"
+#include "../include/main.h"
 
 // -----------------  I2C defines --------------------------------------------------------------------------
 #define I2C_MASTER_SCL_IO           (gpio_num_t) 22            /*!< GPIO number used for I2C master clock */

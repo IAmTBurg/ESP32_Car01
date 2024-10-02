@@ -8,9 +8,7 @@
 
 // ===================== Includes ========================================
 
-#include "main.h"
-#include "pca9685.h"
-#include "my_i2c_interface.h"
+#include "../include/main.h"
 
 using namespace MOTORS_NS;
 using namespace PCA9685_NS;

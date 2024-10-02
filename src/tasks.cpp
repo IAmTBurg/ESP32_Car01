@@ -6,11 +6,8 @@
 //
 //  =====================================================================================
 
-#include "tasks.h"
-#include "main.h"
-#include "task0.h"
-#include "task1.h"
-#include "motor_control_task.h"
+#include "../include/main.h"
+
 
 // setup for FreeRTOS tasks and resources
 void setupTasks()

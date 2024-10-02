@@ -14,10 +14,19 @@
 #include <string>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include "sbus_component.h"
-#include "motor_control.h"
-#include "my_i2c_interface.h"
-#include "pca9685.h"
+#include "driver/i2c.h"
+// #include "driver/i2c_master.h"
+#include "../include/class_main.h"
+#include "../include/main.h"
+#include "../include/task0.h"
+#include "../include/task1.h"
+#include "../include/tasks.h"
+#include "../lib/pca9685/pca9685.h"
+#include "../lib/motor_control/motor_control.h"
+#include "../lib/motor_control/motor_control_task.h"
+#include "../lib/sbus_component/sbus_component.h"
+#include "../lib/my_i2c_interface/my_i2c_interface.h"
+
 
 #define LOG_LEVEL_LOCAL ESP_LOG_VERBOSE
 

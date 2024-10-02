@@ -8,14 +8,12 @@
 
 // ===================== Includes ========================================
 
-#include "main.h"
-#include "motor_control.h"
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/projdefs.h"
 #include "freertos/queue.h"
-#include "sbus_component.h"
-#include "pca9685.h"
+#include "../include/main.h"
 
 namespace MOTORS_NS
 {

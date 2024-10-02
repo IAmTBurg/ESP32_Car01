@@ -17,6 +17,7 @@ ESP32 UART2
 #include "driver/gpio.h"
 #include "esp_event.h"
 #include "esp_log.h"
+#include "../include/main.h"
 
 #define DEBUG_SBUS 1    			// set in SBUS_component.h 1 - turn on;  0 - turn off
 

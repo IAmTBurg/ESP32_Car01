@@ -26,8 +26,7 @@
 #include "driver/gpio.h"
 #include "esp_event.h"
 #include "esp_log.h"
-#include "motor_control_task.h"
-#include "motor_control.h"
+#include "../include/main.h"
 
 // -----------------  motor defines --------------------------------------------------------------------------
 

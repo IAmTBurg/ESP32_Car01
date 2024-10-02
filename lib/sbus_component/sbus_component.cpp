@@ -5,7 +5,8 @@
 #include <freertos/projdefs.h>
 #include <freertos/queue.h>
 #include <driver/uart.h>
-#include "sbus_component.h"
+#include <esp_timer.h> // Include this header for esp_timer_get_time
+#include "../include/main.h"
 
 #define MICRO_SECS (esp_timer_get_time())
 #define MILLI_SECS (esp_timer_get_time() / 1000)
@@ -71,7 +72,8 @@ namespace SBUS_COMPONENT
             .stop_bits = UART_STOP_BITS_2,
             .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
             .rx_flow_ctrl_thresh = 40,
-            .use_ref_tick = true,
+            .source_clk = UART_SCLK_APB,
+            .flags = 0,
         };
 
         ESP_ERROR_CHECK(uart_param_config(EX_UART_NUM, &uart_config));
@@ -123,7 +125,7 @@ namespace SBUS_COMPONENT
             #endif // #if DEBUG_SBUS
 
             //Waiting for UART event.
-            if(xQueueReceive(uart2_event_queue, (void * )&event, (portTickType)portTICK_PERIOD_MS * 1000)) 
+            if(xQueueReceive(uart2_event_queue, (void * )&event, (TickType_t)portTICK_PERIOD_MS * 1000)) 
             {
                 if (event.type != UART_DATA) continue;
             }
@@ -176,7 +178,16 @@ namespace SBUS_COMPONENT
 
                 // middle or end of packet.
                 SBUS_receive_data.msLastByteReceived = current_msCntr;
-                SBUS_receive_data.rxBuf[SBUS_receive_data.pointRxBuf++] = dataByte;
+                if (SBUS_receive_data.pointRxBuf < sizeof(SBUS_receive_data.rxBuf)) {
+                    SBUS_receive_data.rxBuf[SBUS_receive_data.pointRxBuf] = dataByte;
+                    uint8_t temp = SBUS_receive_data.pointRxBuf;
+                    temp++;
+                    SBUS_receive_data.pointRxBuf = temp;
+                } else {
+                    // Handle the error, e.g., reset the buffer or log an error message
+                    SBUS_receive_data.pointRxBuf = 0; // Reset buffer pointer
+                    ESP_LOGE(SbusLogTag, "Buffer overflow detected in SBUS_receive_data.rxBuf");
+                }
             
                 if (SBUS_receive_data.pointRxBuf == 25) // last byte in packet
                 {
@@ -345,7 +356,7 @@ namespace SBUS_COMPONENT
         ESP_LOGI(SbusLogTag, "%s", str);
         strcpy(str, "");
 
-        sprintf(str,"  uart2ChrCnt: %i  dataByte: %i", uart2ChrCnt, dataByte);
+        sprintf(str,"  uart2ChrCnt: %lu  dataByte: %i", uart2ChrCnt, dataByte);
         ESP_LOGI(SbusLogTag, "%s", str);
         strcpy(str, "");
 

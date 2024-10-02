@@ -15,9 +15,7 @@
 
 // ===================== Includes ========================================
 
-#include "main.h"
-#include "my_i2c_interface.h"
-#include "pca9685.h"
+#include "../include/main.h"
 
 namespace MY_I2C_INTERFACE_NS
 {

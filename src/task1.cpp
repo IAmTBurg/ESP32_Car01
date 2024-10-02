@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "main.h"
+#include "../include/main.h"
 #include "task0.h"
 #include "task1.h"
 

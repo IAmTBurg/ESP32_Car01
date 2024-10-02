@@ -10,13 +10,9 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "main.h"
+#include "../include/main.h"
 #include "task0.h"
 #include "task1.h"
-#include "motor_control_task.h"
-#include "motor_control.h"
-#include "my_i2c_interface.h"
-#include "pca9685.h"
 
 using namespace MOTORS_NS;
 using namespace PCA9685_NS;

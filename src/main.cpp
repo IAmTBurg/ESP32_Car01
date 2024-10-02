@@ -11,15 +11,7 @@
 #include <iostream>
 #include "esp_timer.h"
 #include "class_main.h"
-#include "main.h"
-#include "task0.h"
-#include "task1.h"
-#include "tasks.h"
-#include "motor_control_task.h"
-#include "motor_control.h"
-#include "my_i2c_interface.h"
-#include "pca9685.h"
-#include "sbus_component.h"
+#include "../include/main.h"
 
 //****************** Vars, Constants, and defines ********************************************************************************
 using namespace MOTORS_NS;
