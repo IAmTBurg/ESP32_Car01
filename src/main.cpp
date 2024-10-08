@@ -7,6 +7,10 @@
 //************   #include section   ********************************************************************
 
 #include <stdio.h>
+#include "esp_system.h"
+#include "esp_chip_info.h"
+#include "esp_spi_flash.h"
+#include "esp_flash.h"
 #include <string>
 #include <iostream>
 #include "esp_timer.h"
@@ -31,6 +35,29 @@ int64_t                 next_SBUSPrintDebugMsg1 = 0;
 
 //****************** Code ********************************************************************************
 
+void print_chip_info() {
+    strcpy(TAG, "ChipInfo:");
+    ESP_LOGD(TAG,"Running MAIN::setup()..");
+    esp_chip_info_t chip_info;
+    esp_chip_info(&chip_info);
+
+    ESP_LOGD(TAG, "This is an ESP32 chip with %d CPU cores, WiFi%s%s, ",
+             chip_info.cores,
+             (chip_info.features & CHIP_FEATURE_BT) ? "/BT" : "",
+             (chip_info.features & CHIP_FEATURE_BLE) ? "/BLE" : "");
+
+    ESP_LOGD(TAG, "silicon revision %d, ", chip_info.revision);
+
+    uint32_t flash_size;
+    esp_err_t ret = esp_flash_get_size(NULL, &flash_size);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to get flash size");
+    } else {
+        ESP_LOGD(TAG, "%luMB %s flash",
+                 flash_size / (1024 * 1024),
+                 (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+    }
+}
 extern "C" void app_main(void)
 {
     main_obj.setup();
@@ -44,6 +71,7 @@ extern "C" void app_main(void)
 
 void Main_class::setup(void)
 {
+    print_chip_info();
     strcpy(TAG, "Main_class:");
     ESP_LOGD(TAG,"Running MAIN::setup()..");
     SBUS_COMPONENT::Sbus::Init_SBUS_receive();      	// Intialialize data structure and start UART processing
